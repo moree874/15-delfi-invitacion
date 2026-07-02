@@ -39,15 +39,14 @@ document.getElementById("formulario").addEventListener("submit", function(e) {
   const asistencia = document.getElementById("asistencia").value;
   const menu = document.getElementById("menu").value;
   const restriccion = document.getElementById("restriccion").value;
-  const cancion = document.getElementById("cancion").value;
-
+ 
   const mensaje =
     `Hola, confirmo asistencia:%0A` +
     `Nombre: ${nombre}%0A` +
     `Asistencia: ${asistencia}%0A` +
     `Menú: ${menu}%0A` +
     `Restricción alimentaria: ${restriccion}%0A` +
-    `Canción recomendada: ${cancion}`;
+    
 
   setTimeout(() => {
     window.open(`https://wa.me/542634475711?text=${mensaje}`, "_blank");
