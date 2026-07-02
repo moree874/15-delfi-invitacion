@@ -124,15 +124,19 @@ const boton = document.getElementById("btnMusica");
 
 let reproduciendo = false;
 
-boton.onclick = function () {
-
+boton.addEventListener("click", async function () {
+  try {
     if (reproduciendo) {
-        musica.pause();
-        boton.innerHTML = "🎵";
+      musica.pause();
+      boton.innerHTML = "🎵";
+      reproduciendo = false;
     } else {
-        musica.play();
-        boton.innerHTML = "⏸";
+      await musica.play();
+      boton.innerHTML = "⏸";
+      reproduciendo = true;
     }
-
-    reproduciendo = !reproduciendo;
-};
+  } catch (error) {
+    alert("Tocá nuevamente el botón de música o revisá que el archivo esté en la carpeta musica.");
+    console.log(error);
+  }
+});
