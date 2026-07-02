@@ -356,35 +356,31 @@ select {
     z-index:9999;
 
 }
-.colores{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:18px;
-
-    margin-top:25px;
-
+.colores {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 25px;
+}
+.colores div {
+  text-align: center;
 }
 
-.colores img{
-
-    width:65px;
-
-    border-radius:50%;
-
-    box-shadow:0 0 18px rgba(255,255,255,.35);
-
+.colores img {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  box-shadow: 0 0 18px rgba(255,255,255,0.45);
 }
 
-.colores p{
 
-    margin-top:8px;
-
-    font-size:14px;
-
+.colores img {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  box-shadow: 0 0 18px rgba(255,255,255,0.45);
 }
+
 #btnMusica {
   position: fixed;
   top: 20px;

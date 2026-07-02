@@ -1,8 +1,13 @@
 function abrirInvitacion() {
+  const musica = document.getElementById("musica");
+
+  musica.play().catch(() => {
+    console.log("El navegador bloqueó la música.");
+  });
+
   document.querySelector(".portada").style.display = "none";
   document.getElementById("contenido").classList.remove("oculto");
 }
-
 const fechaFiesta = new Date("2026-08-18T18:00:00").getTime();
 
 function actualizarContador() {
@@ -120,23 +125,7 @@ function lanzarConfeti() {
   }
 }
 const musica = document.getElementById("musica");
-const boton = document.getElementById("btnMusica");
+
 
 let reproduciendo = false;
 
-boton.addEventListener("click", async function () {
-  try {
-    if (reproduciendo) {
-      musica.pause();
-      boton.innerHTML = "🎵";
-      reproduciendo = false;
-    } else {
-      await musica.play();
-      boton.innerHTML = "⏸";
-      reproduciendo = true;
-    }
-  } catch (error) {
-    alert("Tocá nuevamente el botón de música o revisá que el archivo esté en la carpeta musica.");
-    console.log(error);
-  }
-});
