@@ -96,7 +96,7 @@ document.getElementById("formulario").addEventListener("submit", function(e) {
     integrantesMensaje;
 
   setTimeout(() => {
-    window.open(`https://wa.me/542634475711?text=${mensaje}`, "_blank");
+    window.open(`https://wa.me/542634475730?text=${mensaje}`, "_blank");
   }, 1200);
 });
 
