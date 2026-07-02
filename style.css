@@ -16,7 +16,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
+ 
 }
 
 body {
@@ -37,7 +37,7 @@ body {
 
 .slide {
   min-height: 100vh;
-  scroll-snap-align: start;
+ 
   padding: 45px 24px;
   display: flex;
   flex-direction: column;
