@@ -8,20 +8,26 @@
 </head>
 <body>
 
-  <section class="slide portada">
-    <div class="texto-portada">
-      <p class="subtitulo">XV Años</p>
+  <div class="fondo-brillo"></div>
+
+  <section class="slide portada" id="inicio">
+    <div class="contenido-portada">
+      <p class="xv">XV Años</p>
       <h1>Delfi</h1>
-      <p class="fecha">18/08/2026</p>
+      <p class="frase">Una noche mágica para celebrar mis 15</p>
+      <div class="linea"></div>
+      <p class="fecha">18 · 08 · 2026</p>
       <p class="hora">18:00 hs</p>
-      <button onclick="abrirInvitacion()">Abrir invitación</button>
+      <button class="btn-principal" onclick="abrirInvitacion()">Abrir invitación</button>
     </div>
   </section>
 
   <main id="contenido" class="oculto">
 
     <section class="slide">
+      <p class="mini-titulo">Cuenta regresiva</p>
       <h2>Faltan</h2>
+
       <div class="contador">
         <div><span id="dias">0</span><p>Días</p></div>
         <div><span id="horas">0</span><p>Hs</p></div>
@@ -32,36 +38,46 @@
 
     <section class="slide">
       <img src="img/ubicacion.png" class="icono" alt="Ubicación">
+      <p class="mini-titulo">Lugar del evento</p>
       <h2>¿Cómo llegar?</h2>
-      <p>Salón a confirmar</p>
-      <p>Dirección a confirmar</p>
+
+      <p class="texto">Salón a confirmar</p>
+      <p class="texto">Dirección a confirmar</p>
+
       <a class="boton" href="https://maps.google.com" target="_blank">Ver ubicación</a>
     </section>
 
     <section class="slide">
       <img src="img/dress-code.png" class="icono-grande" alt="Dress Code">
+      <p class="mini-titulo">Código de vestimenta</p>
       <h2>Dress Code</h2>
+
       <p class="destacado">Formal / Elegante</p>
-      <p>Venite con ganas de bailar toda la noche.</p>
+      <p class="texto">Venite con ganas de brillar y bailar toda la noche.</p>
     </section>
 
     <section class="slide">
       <img src="img/regalo.png" class="icono" alt="Regalo">
+      <p class="mini-titulo">Mesa de regalos</p>
       <h2>Regalo</h2>
-      <p>El mejor regalo es tu compañía.</p>
-      <p>Si querés obsequiarme algo, podés hacerlo acá:</p>
-      <a class="boton" href="https://link.mercadopago.com.ar/delfirosales3" target="_blank">Hacer regalo</a>
+
+      <p class="texto">El mejor regalo es tu compañía.</p>
+      <p class="texto">Pero si querés obsequiarme algo, podés hacerlo acá:</p>
+
+      <a class="boton" href="https://link.mercadopago.com.ar/delfirosales3" target="_blank">
+        Hacer regalo
+      </a>
     </section>
 
-    <section class="slide">
-      <h2>Confirmación</h2>
+    <section class="slide confirmacion">
       <img src="img/confeti.png" class="icono" alt="Confirmación">
+      <p class="mini-titulo">Confirmación</p>
+      <h2>¿Venís?</h2>
 
       <div class="aviso">
-        <h3>Información importante</h3>
         <p>Confirmá tu asistencia hasta el <strong>25 de julio de 2026</strong>.</p>
         <p>Esta invitación es válida para un máximo de <strong>4 personas</strong>.</p>
-        <p>Cada invitado debe completar el formulario de manera individual.</p>
+        <p>Cada invitado debe completar el formulario individualmente.</p>
       </div>
 
       <form id="formulario">
@@ -81,23 +97,26 @@
           <option value="Celíaco">Celíaco</option>
         </select>
 
-        <input type="text" id="restriccion" placeholder="Restricción alimentaria">
-        <input type="text" id="cancion" placeholder="Canción que no puede faltar">
+        <input type="text" id="restriccion" placeholder="¿Tenés alguna restricción alimentaria?">
+        <input type="text" id="cancion" placeholder="¿Qué canción no puede faltar?">
 
-        <button type="submit">Confirmar asistencia</button>
+        <button type="submit" class="btn-principal">Confirmar asistencia</button>
       </form>
     </section>
 
     <section class="slide">
+      <p class="mini-titulo">Música</p>
       <h2>Playlist</h2>
-      <p>Sumate a la playlist y agregá tus canciones favoritas.</p>
+
+      <p class="texto">Sumate a la playlist y agregá tus canciones favoritas.</p>
       <a class="boton" href="https://open.spotify.com/" target="_blank">Ir a Spotify</a>
     </section>
 
-    <section class="slide">
-      <h2>¡Te espero!</h2>
-      <p>Gracias por acompañarme en una noche tan especial.</p>
-      <p class="destacado">Delfi XV ✨</p>
+    <section class="slide final">
+      <p class="mini-titulo">Gracias por acompañarme</p>
+      <h2>Te espero</h2>
+      <p class="texto">Será una noche inolvidable llena de magia, música y momentos hermosos.</p>
+      <p class="firma">Delfi XV</p>
     </section>
 
   </main>

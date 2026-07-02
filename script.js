@@ -55,11 +55,14 @@ document.getElementById("formulario").addEventListener("submit", function(e) {
 });
 
 function lanzarConfeti() {
-  for (let i = 0; i < 75; i++) {
+  const colores = ["#ffffff", "#d8d8d8", "#c0c0c0", "#f5f5f5"];
+
+  for (let i = 0; i < 90; i++) {
     const confeti = document.createElement("div");
     confeti.classList.add("confeti");
 
     confeti.style.left = Math.random() * 100 + "vw";
+    confeti.style.background = colores[Math.floor(Math.random() * colores.length)];
     confeti.style.animationDuration = Math.random() * 2 + 2 + "s";
     confeti.style.opacity = Math.random();
 
