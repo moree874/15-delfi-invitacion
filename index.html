@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XV Delfi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section class="slide portada">
+    <div class="texto-portada">
+      <p class="subtitulo">XV Años</p>
+      <h1>Delfi</h1>
+      <p class="fecha">18/08/2026</p>
+      <p class="hora">18:00 hs</p>
+      <button onclick="abrirInvitacion()">Abrir invitación</button>
+    </div>
+  </section>
+
+  <main id="contenido" class="oculto">
+
+    <section class="slide">
+      <h2>Faltan</h2>
+      <div class="contador">
+        <div><span id="dias">0</span><p>Días</p></div>
+        <div><span id="horas">0</span><p>Hs</p></div>
+        <div><span id="minutos">0</span><p>Min</p></div>
+        <div><span id="segundos">0</span><p>Seg</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <img src="img/ubicacion.png" class="icono" alt="Ubicación">
+      <h2>¿Cómo llegar?</h2>
+      <p>Salón a confirmar</p>
+      <p>Dirección a confirmar</p>
+      <a class="boton" href="https://maps.google.com" target="_blank">Ver ubicación</a>
+    </section>
+
+    <section class="slide">
+      <img src="img/dress-code.png" class="icono-grande" alt="Dress Code">
+      <h2>Dress Code</h2>
+      <p class="destacado">Formal / Elegante</p>
+      <p>Venite con ganas de bailar toda la noche.</p>
+    </section>
+
+    <section class="slide">
+      <img src="img/regalo.png" class="icono" alt="Regalo">
+      <h2>Regalo</h2>
+      <p>El mejor regalo es tu compañía.</p>
+      <p>Si querés obsequiarme algo, podés hacerlo acá:</p>
+      <a class="boton" href="https://link.mercadopago.com.ar/delfirosales3" target="_blank">Hacer regalo</a>
+    </section>
+
+    <section class="slide">
+      <h2>Confirmación</h2>
+      <img src="img/confeti.png" class="icono" alt="Confirmación">
+
+      <div class="aviso">
+        <h3>Información importante</h3>
+        <p>Confirmá tu asistencia hasta el <strong>25 de julio de 2026</strong>.</p>
+        <p>Esta invitación es válida para un máximo de <strong>4 personas</strong>.</p>
+        <p>Cada invitado debe completar el formulario de manera individual.</p>
+      </div>
+
+      <form id="formulario">
+        <input type="text" id="nombre" placeholder="Nombre y apellido" required>
+
+        <select id="asistencia" required>
+          <option value="">¿Vas a asistir?</option>
+          <option value="Sí, voy a estar">Sí, voy a estar</option>
+          <option value="No voy a poder asistir">No voy a poder asistir</option>
+        </select>
+
+        <select id="menu" required>
+          <option value="">Menú</option>
+          <option value="Tradicional">Tradicional</option>
+          <option value="Vegetariano">Vegetariano</option>
+          <option value="Vegano">Vegano</option>
+          <option value="Celíaco">Celíaco</option>
+        </select>
+
+        <input type="text" id="restriccion" placeholder="Restricción alimentaria">
+        <input type="text" id="cancion" placeholder="Canción que no puede faltar">
+
+        <button type="submit">Confirmar asistencia</button>
+      </form>
+    </section>
+
+    <section class="slide">
+      <h2>Playlist</h2>
+      <p>Sumate a la playlist y agregá tus canciones favoritas.</p>
+      <a class="boton" href="https://open.spotify.com/" target="_blank">Ir a Spotify</a>
+    </section>
+
+    <section class="slide">
+      <h2>¡Te espero!</h2>
+      <p>Gracias por acompañarme en una noche tan especial.</p>
+      <p class="destacado">Delfi XV ✨</p>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
