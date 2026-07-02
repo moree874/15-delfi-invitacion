@@ -124,20 +124,15 @@ const boton = document.getElementById("btnMusica");
 
 let reproduciendo = false;
 
-boton.addEventListener("click", () => {
+boton.onclick = function () {
 
-    if(reproduciendo){
-
+    if (reproduciendo) {
         musica.pause();
-        boton.innerHTML="🎵";
-
-    }else{
-
+        boton.innerHTML = "🎵";
+    } else {
         musica.play();
-        boton.innerHTML="⏸";
-
+        boton.innerHTML = "⏸";
     }
 
-    reproduciendo=!reproduciendo;
-
-});
+    reproduciendo = !reproduciendo;
+};
