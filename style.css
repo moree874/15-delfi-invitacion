@@ -1,3 +1,12 @@
+@font-face {
+    font-family: "Blacksword";
+    src: url("fonts/Blacksword.otf");
+}
+
+@font-face {
+    font-family: "Magnolia";
+    src: url("fonts/Magnolia Script.otf");
+}
 * {
   margin: 0;
   padding: 0;
@@ -68,20 +77,16 @@ body {
 }
 
 h1 {
-  font-family: Georgia, serif;
-  font-size: 72px;
-  font-style: italic;
-  font-weight: normal;
-  text-shadow: 0 0 18px white;
+    font-family: "Blacksword";
+    font-size: 95px;
+    font-weight: normal;
+    color: white;
+    text-shadow: 0 0 18px rgba(255,255,255,.6);
 }
-
-h2 {
-  font-family: Georgia, serif;
-  font-size: 43px;
-  font-style: italic;
-  font-weight: normal;
-  margin-bottom: 18px;
-  text-shadow: 0 0 15px white;
+h2{
+    font-family:"Magnolia";
+    font-size:50px;
+    font-weight:normal;
 }
 
 .frase,
@@ -216,12 +221,9 @@ select {
   color: #333;
 }
 
-.firma {
-  margin-top: 22px;
-  font-family: Georgia, serif;
-  font-size: 34px;
-  font-style: italic;
-  text-shadow: 0 0 15px white;
+.firma{
+    font-family:"Blacksword";
+    font-size:60px;
 }
 
 .confeti {
