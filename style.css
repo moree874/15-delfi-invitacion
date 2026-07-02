@@ -329,3 +329,59 @@ select {
     width: 145px;
   }
 }
+#btnMusica{
+
+    position:fixed;
+
+    top:25px;
+
+    right:20px;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(8px);
+
+    color:white;
+
+    font-size:28px;
+
+    border:1px solid white;
+
+    z-index:9999;
+
+}
+.colores{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    margin-top:25px;
+
+}
+
+.colores img{
+
+    width:65px;
+
+    border-radius:50%;
+
+    box-shadow:0 0 18px rgba(255,255,255,.35);
+
+}
+
+.colores p{
+
+    margin-top:8px;
+
+    font-size:14px;
+
+}

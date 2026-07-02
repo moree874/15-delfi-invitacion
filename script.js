@@ -119,3 +119,25 @@ function lanzarConfeti() {
     }, 4000);
   }
 }
+const musica = document.getElementById("musica");
+const boton = document.getElementById("btnMusica");
+
+let reproduciendo = false;
+
+boton.addEventListener("click", () => {
+
+    if(reproduciendo){
+
+        musica.pause();
+        boton.innerHTML="🎵";
+
+    }else{
+
+        musica.play();
+        boton.innerHTML="⏸";
+
+    }
+
+    reproduciendo=!reproduciendo;
+
+});
