@@ -30,23 +30,70 @@ function actualizarContador() {
 setInterval(actualizarContador, 1000);
 actualizarContador();
 
+const cantidadSelect = document.getElementById("cantidad");
+const integrantesDiv = document.getElementById("integrantes");
+
+cantidadSelect.addEventListener("change", function () {
+  const cantidad = Number(this.value);
+  integrantesDiv.innerHTML = "";
+
+  for (let i = 1; i <= cantidad; i++) {
+    integrantesDiv.innerHTML += `
+      <div class="integrante">
+        <h3>Integrante ${i}</h3>
+
+        <input 
+          type="text" 
+          id="nombre${i}" 
+          placeholder="Nombre y apellido del integrante ${i}" 
+          required
+        >
+
+        <select id="menu${i}" required>
+          <option value="">Menú del integrante ${i}</option>
+          <option value="Tradicional">Tradicional</option>
+          <option value="Vegetariano">Vegetariano</option>
+          <option value="Vegano">Vegano</option>
+          <option value="Celíaco">Celíaco</option>
+        </select>
+
+        <input 
+          type="text" 
+          id="restriccion${i}" 
+          placeholder="Restricción alimentaria del integrante ${i}"
+        >
+      </div>
+    `;
+  }
+});
+
 document.getElementById("formulario").addEventListener("submit", function(e) {
   e.preventDefault();
 
   lanzarConfeti();
 
-  const nombre = document.getElementById("nombre").value;
-  const asistencia = document.getElementById("asistencia").value;
-  const menu = document.getElementById("menu").value;
-  const restriccion = document.getElementById("restriccion").value;
- 
+  const familia = document.getElementById("familia").value;
+  const cantidad = Number(document.getElementById("cantidad").value);
+
+  let integrantesMensaje = "";
+
+  for (let i = 1; i <= cantidad; i++) {
+    const nombre = document.getElementById(`nombre${i}`).value;
+    const menu = document.getElementById(`menu${i}`).value;
+    const restriccion = document.getElementById(`restriccion${i}`).value || "Ninguna";
+
+    integrantesMensaje +=
+      `%0AIntegrante ${i}:%0A` +
+      `Nombre: ${nombre}%0A` +
+      `Menú: ${menu}%0A` +
+      `Restricción: ${restriccion}%0A`;
+  }
+
   const mensaje =
     `Hola, confirmo asistencia:%0A` +
-    `Nombre: ${nombre}%0A` +
-    `Asistencia: ${asistencia}%0A` +
-    `Menú: ${menu}%0A` +
-    `Restricción alimentaria: ${restriccion}%0A` +
-    
+    `Familia: ${familia}%0A` +
+    `Cantidad de integrantes: ${cantidad}%0A` +
+    integrantesMensaje;
 
   setTimeout(() => {
     window.open(`https://wa.me/542634475711?text=${mensaje}`, "_blank");
