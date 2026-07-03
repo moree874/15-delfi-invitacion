@@ -78,27 +78,13 @@
     <div class="aviso">
       <p>Confirmá tu asistencia hasta el <strong>25 de julio de 2026</strong>.</p>
       <p>Esta invitación es válida para <strong>1 persona</strong>.</p>
-      <p>Completá los datos del invitado.</p>
+      <p>Completá los datos </p>
     </div>
 
     <form id="formulario" data-cupos="1">
       <input type="text" id="familia" placeholder="Apellido de la familia" required>
 
-      <div class="integrante">
-        <h3>Integrante 1</h3>
-
-        <input type="text" id="nombre1" placeholder="Nombre y apellido" required>
-
-        <select id="menu1" required>
-          <option value="">Menú</option>
-          <option value="Tradicional">Tradicional</option>
-          <option value="Vegetariano">Vegetariano</option>
-          <option value="Vegano">Vegano</option>
-          <option value="Celíaco">Celíaco</option>
-        </select>
-
-        <input type="text" id="restriccion1" placeholder="Restricción alimentaria (opcional)">
-      </div>
+      <div id="integrantes"></div>
 
       <button type="submit" class="btn-principal">Confirmar asistencia</button>
     </form>
