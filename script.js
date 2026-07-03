@@ -64,35 +64,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
     formulario.addEventListener("submit", function (e) {
       e.preventDefault();
-      e.stopPropagation();
 
       lanzarConfeti();
 
-      const familia = document.getElementById("familia").value;
+      const boton = formulario.querySelector("button[type='submit']");
+      boton.textContent = "Asistencia confirmada";
+      boton.disabled = true;
 
-      let mensaje =
-        `Hola, confirmo asistencia:%0A` +
-        `Familia: ${familia}%0A` +
-        `Invitación válida para: ${cupos} persona(s)%0A`;
-
-      for (let i = 1; i <= cupos; i++) {
-        const nombre = document.getElementById(`nombre${i}`).value;
-        const menu = document.getElementById(`menu${i}`).value;
-        const restriccion = document.getElementById(`restriccion${i}`).value || "Ninguna";
-
-        mensaje +=
-          `%0AIntegrante ${i}:%0A` +
-          `Nombre: ${nombre}%0A` +
-          `Menú: ${menu}%0A` +
-          `Restricción: ${restriccion}%0A`;
-      }
-
-      setTimeout(() => {
-        window.open(`https://wa.me/542634475711?text=${mensaje}`, "_blank");
-      }, 2000);
+      mostrarMensajeConfirmacion();
     });
   }
 });
+
+function mostrarMensajeConfirmacion() {
+  const mensaje = document.createElement("div");
+  mensaje.classList.add("mensaje-confirmacion");
+
+  mensaje.innerHTML = `
+    <div class="mensaje-caja">
+      <h2>¡Gracias!</h2>
+      <p>Tu asistencia fue confirmada correctamente.</p>
+      <p>Nos vemos el 15 de agosto ❤️</p>
+    </div>
+  `;
+
+  document.body.appendChild(mensaje);
+}
 
 function lanzarConfeti() {
   const colores = ["#ffffff", "#e8e8e8", "#cfcfcf", "#f7f7f7"];

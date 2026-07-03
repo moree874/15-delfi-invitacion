@@ -391,3 +391,36 @@ select {
   z-index: 9999;
   font-size: 22px;
 }
+.mensaje-confirmacion {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  padding: 25px;
+}
+
+.mensaje-caja {
+  max-width: 360px;
+  width: 100%;
+  padding: 35px 25px;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.35);
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 35px rgba(255,255,255,0.35);
+}
+
+.mensaje-caja h2 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.mensaje-caja p {
+  font-size: 20px;
+  margin: 10px 0;
+}
