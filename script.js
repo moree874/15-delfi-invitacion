@@ -1,140 +1,88 @@
-// ============================
-// ABRIR INVITACIÓN
-// ============================
-
 function abrirInvitacion() {
+  const musica = document.getElementById("musica");
 
-    const musica = document.getElementById("musica");
+  if (musica) {
+    musica.play().catch(() => {
+      console.log("El navegador bloqueó la música.");
+    });
+  }
 
-    if (musica) {
-        musica.play().catch(() => {
-            console.log("El navegador bloqueó la música.");
-        });
-    }
-
-    document.querySelector(".portada").style.display = "none";
-    document.getElementById("contenido").classList.remove("oculto");
-
+  document.querySelector(".portada").style.display = "none";
+  document.getElementById("contenido").classList.remove("oculto");
 }
-
-// ============================
-// CUENTA REGRESIVA
-// ============================
 
 const fechaFiesta = new Date("2026-08-18T18:00:00").getTime();
 
 function actualizarContador() {
+  const ahora = new Date().getTime();
+  const diferencia = fechaFiesta - ahora;
 
-    const ahora = new Date().getTime();
+  if (diferencia <= 0) {
+    document.querySelector(".contador").innerHTML = "<h3>¡Llegó el gran día!</h3>";
+    return;
+  }
 
-    const diferencia = fechaFiesta - ahora;
+  document.getElementById("dias").textContent =
+    Math.floor(diferencia / (1000 * 60 * 60 * 24));
 
-    if (diferencia <= 0) {
+  document.getElementById("horas").textContent =
+    Math.floor((diferencia / (1000 * 60 * 60)) % 24);
 
-        document.querySelector(".contador").innerHTML =
-            "<h3>¡Llegó el gran día!</h3>";
+  document.getElementById("minutos").textContent =
+    Math.floor((diferencia / (1000 * 60)) % 60);
 
-        return;
-
-    }
-
-    document.getElementById("dias").textContent =
-        Math.floor(diferencia / (1000 * 60 * 60 * 24));
-
-    document.getElementById("horas").textContent =
-        Math.floor((diferencia / (1000 * 60 * 60)) % 24);
-
-    document.getElementById("minutos").textContent =
-        Math.floor((diferencia / (1000 * 60)) % 60);
-
-    document.getElementById("segundos").textContent =
-        Math.floor((diferencia / 1000) % 60);
-
+  document.getElementById("segundos").textContent =
+    Math.floor((diferencia / 1000) % 60);
 }
 
 setInterval(actualizarContador, 1000);
-
 actualizarContador();
 
-
-// ======================================
-// SOLO PARA LA INVITACIÓN ORIGINAL
-// (si existe el selector cantidad)
-// ======================================
-
-const cantidadSelect = document.getElementById("cantidad");
-
+const formulario = document.getElementById("formulario");
 const integrantesDiv = document.getElementById("integrantes");
 
-if (cantidadSelect && integrantesDiv) {
+if (formulario && integrantesDiv) {
+  const cupos = Number(formulario.dataset.cupos);
 
-    cantidadSelect.addEventListener("change", function () {
+  integrantesDiv.innerHTML = "";
 
-        const cantidad = Number(this.value);
+  for (let i = 1; i <= cupos; i++) {
+    integrantesDiv.innerHTML += `
+      <div class="integrante">
+        <h3>Integrante ${i}</h3>
 
-        integrantesDiv.innerHTML = "";
+        <input 
+          type="text" 
+          id="nombre${i}" 
+          placeholder="Nombre y apellido" 
+          required
+        >
 
-        for (let i = 1; i <= cantidad; i++) {
+        <select id="menu${i}" required>
+          <option value="">Menú</option>
+          <option value="Tradicional">Tradicional</option>
+          <option value="Vegetariano">Vegetariano</option>
+          <option value="Vegano">Vegano</option>
+          <option value="Celíaco">Celíaco</option>
+        </select>
 
-            integrantesDiv.innerHTML += `
+        <input 
+          type="text" 
+          id="restriccion${i}" 
+          placeholder="Restricción alimentaria (opcional)"
+        >
+      </div>
+    `;
+  }
 
-            <div class="integrante">
-
-                <h3>Integrante ${i}</h3>
-
-                <input
-                type="text"
-                id="nombre${i}"
-                placeholder="Nombre y apellido"
-                required>
-
-                <select id="menu${i}" required>
-
-                    <option value="">Menú</option>
-
-                    <option value="Tradicional">Tradicional</option>
-
-                    <option value="Vegetariano">Vegetariano</option>
-
-                    <option value="Vegano">Vegano</option>
-
-                    <option value="Celíaco">Celíaco</option>
-
-                </select>
-
-                <input
-                type="text"
-                id="restriccion${i}"
-                placeholder="Restricción alimentaria (opcional)">
-
-            </div>
-
-            `;
-
-        }
-
-    });
-
-}
-
-
-
-// ============================
-// FORMULARIO
-// ============================
-
-const formulario = document.getElementById("formulario");
-
-if (formulario) {
   formulario.addEventListener("submit", function (e) {
     e.preventDefault();
 
     lanzarConfeti();
 
     const familia = document.getElementById("familia").value;
-    const cupos = Number(formulario.dataset.cupos);
 
-    let mensaje = 
+    let mensaje =
       `Hola, confirmo asistencia:%0A` +
       `Familia: ${familia}%0A` +
       `Invitación válida para: ${cupos} persona(s)%0A`;
@@ -142,9 +90,10 @@ if (formulario) {
     for (let i = 1; i <= cupos; i++) {
       const nombre = document.getElementById(`nombre${i}`).value;
       const menu = document.getElementById(`menu${i}`).value;
-      const restriccion = document.getElementById(`restriccion${i}`).value || "Ninguna";
+      const restriccion =
+        document.getElementById(`restriccion${i}`).value || "Ninguna";
 
-      mensaje += 
+      mensaje +=
         `%0AIntegrante ${i}:%0A` +
         `Nombre: ${nombre}%0A` +
         `Menú: ${menu}%0A` +
@@ -155,4 +104,23 @@ if (formulario) {
       window.open(`https://wa.me/542634475711?text=${mensaje}`, "_blank");
     }, 1200);
   });
+}
+
+function lanzarConfeti() {
+  const colores = ["#ffffff", "#e8e8e8", "#cfcfcf", "#f7f7f7"];
+
+  for (let i = 0; i < 120; i++) {
+    const confeti = document.createElement("div");
+    confeti.classList.add("confeti");
+
+    confeti.style.left = Math.random() * 100 + "vw";
+    confeti.style.background = colores[Math.floor(Math.random() * colores.length)];
+    confeti.style.animationDuration = Math.random() * 2 + 2 + "s";
+
+    document.body.appendChild(confeti);
+
+    setTimeout(() => {
+      confeti.remove();
+    }, 4000);
+  }
 }
