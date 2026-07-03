@@ -43,10 +43,11 @@ const integrantesDiv = document.getElementById("integrantes");
 
 if (formulario && integrantesDiv) {
   const cupos = Number(formulario.dataset.cupos);
-
+console.log("Cupos:", cupos);
   integrantesDiv.innerHTML = "";
 
   for (let i = 1; i <= cupos; i++) {
+    console.log("Creando integrante", i);
     integrantesDiv.innerHTML += `
       <div class="integrante">
         <h3>Integrante ${i}</h3>
