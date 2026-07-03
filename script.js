@@ -83,10 +83,7 @@ function mostrarMensajeConfirmacion() {
   mensaje.classList.add("mensaje-confirmacion");
 
   mensaje.innerHTML = `
-
     <div class="mensaje-caja">
-
-      <button class="cerrar-mensaje">&times;</button>
 
       <h2>¡Gracias! 🎉</h2>
 
@@ -94,20 +91,18 @@ function mostrarMensajeConfirmacion() {
 
       <p>Nos vemos el <strong>15 de agosto ❤️</strong></p>
 
-    </div>
+      <button class="cerrar-mensaje">Cerrar ✕</button>
 
+    </div>
   `;
 
   document.body.appendChild(mensaje);
 
   mensaje.querySelector(".cerrar-mensaje").addEventListener("click", function () {
-
       mensaje.remove();
-
   });
 
 }
-
 function lanzarConfeti() {
   const colores = ["#ffffff", "#e8e8e8", "#cfcfcf", "#f7f7f7"];
 
