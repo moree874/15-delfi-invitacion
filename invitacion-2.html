@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>XV Delfi</title>
+ <title>XV Delfi - 2 Invitados</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -96,24 +96,76 @@ evitá asistir con prendas de estos colores.</p>
       <p class="mini-titulo">Confirmación</p>
       <h2>¿Venís?</h2>
 
-      <div class="aviso">
-        <p>Confirmá tu asistencia hasta el <strong>25 de julio de 2026</strong>.</p>
-        <p>Esta invitación es válida para un máximo de <strong>4 personas</strong>.</p>
-        <p>Completá los datos de cada integrante de la familia.</p>
-      </div>
+    <div class="aviso">
 
-      <form id="formulario">
-        <input type="text" id="familia" placeholder="Apellido de la familia" required>
+    <p>Confirmá tu asistencia hasta el <strong>25 de julio de 2026</strong>.</p>
 
-        <select id="cantidad" required>
-          <option value="">Cantidad de integrantes</option>
-          <option value="1">1 integrante</option>
-          <option value="2">2 integrantes</option>
-          <option value="3">3 integrantes</option>
-          <option value="4">4 integrantes</option>
-        </select>
+    <p>Esta invitación es válida para <strong>2 personas</strong>.</p>
 
-        <div id="integrantes"></div>
+    <p>Completá los datos de ambos invitados.</p>
+
+</div>
+
+      <form id="formulario" data-cupos="2">
+      <div class="integrante">
+
+    <h3>Integrante 1</h3>
+
+    <input type="text"
+        id="nombre1"
+        placeholder="Nombre y apellido"
+        required>
+
+    <select id="menu1" required>
+
+        <option value="">Menú</option>
+
+        <option value="Tradicional">Tradicional</option>
+
+        <option value="Vegetariano">Vegetariano</option>
+
+        <option value="Vegano">Vegano</option>
+
+        <option value="Celíaco">Celíaco</option>
+
+    </select>
+
+    <input
+        type="text"
+        id="restriccion1"
+        placeholder="Restricción alimentaria (opcional)">
+
+</div>
+
+<div class="integrante">
+
+    <h3>Integrante 2</h3>
+
+    <input type="text"
+        id="nombre2"
+        placeholder="Nombre y apellido"
+        required>
+
+    <select id="menu2" required>
+
+        <option value="">Menú</option>
+
+        <option value="Tradicional">Tradicional</option>
+
+        <option value="Vegetariano">Vegetariano</option>
+
+        <option value="Vegano">Vegano</option>
+
+        <option value="Celíaco">Celíaco</option>
+
+    </select>
+
+    <input
+        type="text"
+        id="restriccion2"
+        placeholder="Restricción alimentaria (opcional)">
+
+</div>
 
         <button type="submit" class="btn-principal">Confirmar asistencia</button>
       </form>

@@ -45,7 +45,7 @@ body {
   align-items: center;
   background-image:
     linear-gradient(rgba(0,0,0,0.20), rgba(0,0,0,0.78)),
-    url("img/fondo.jpg");
+    url("img/fondo.png");
   background-size: cover;
   background-position: center;
   position: relative;

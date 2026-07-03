@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>XV Delfi</title>
+  <title>XV Delfi- 4 Invitados</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -97,23 +97,48 @@ evitá asistir con prendas de estos colores.</p>
       <h2>¿Venís?</h2>
 
       <div class="aviso">
-        <p>Confirmá tu asistencia hasta el <strong>25 de julio de 2026</strong>.</p>
-        <p>Esta invitación es válida para un máximo de <strong>4 personas</strong>.</p>
-        <p>Completá los datos de cada integrante de la familia.</p>
+       <div class="aviso">
+
+    <p>Confirmá tu asistencia hasta el <strong>25 de julio de 2026</strong>.</p>
+
+    <p>Esta invitación es válida para <strong>4 personas</strong>.</p>
+
+    <p>Completá los datos de los cuatro invitados.</p>
+
+</div>
       </div>
 
-      <form id="formulario">
-        <input type="text" id="familia" placeholder="Apellido de la familia" required>
+      <form id="formulario" data-cupos="4">
+       <div class="integrante">
 
-        <select id="cantidad" required>
-          <option value="">Cantidad de integrantes</option>
-          <option value="1">1 integrante</option>
-          <option value="2">2 integrantes</option>
-          <option value="3">3 integrantes</option>
-          <option value="4">4 integrantes</option>
-        </select>
+    <h3>Integrante 4</h3>
 
-        <div id="integrantes"></div>
+    <input
+        type="text"
+        id="nombre4"
+        placeholder="Nombre y apellido"
+        required>
+
+    <select id="menu4" required>
+
+        <option value="">Menú</option>
+
+        <option value="Tradicional">Tradicional</option>
+
+        <option value="Vegetariano">Vegetariano</option>
+
+        <option value="Vegano">Vegano</option>
+
+        <option value="Celíaco">Celíaco</option>
+
+    </select>
+
+    <input
+        type="text"
+        id="restriccion4"
+        placeholder="Restricción alimentaria (opcional)">
+
+</div>
 
         <button type="submit" class="btn-principal">Confirmar asistencia</button>
       </form>
