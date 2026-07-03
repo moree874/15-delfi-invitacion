@@ -43,21 +43,15 @@ const integrantesDiv = document.getElementById("integrantes");
 
 if (formulario && integrantesDiv) {
   const cupos = Number(formulario.dataset.cupos);
-console.log("Cupos:", cupos);
+
   integrantesDiv.innerHTML = "";
 
   for (let i = 1; i <= cupos; i++) {
-    console.log("Creando integrante", i);
     integrantesDiv.innerHTML += `
       <div class="integrante">
         <h3>Integrante ${i}</h3>
 
-        <input 
-          type="text" 
-          id="nombre${i}" 
-          placeholder="Nombre y apellido" 
-          required
-        >
+        <input type="text" id="nombre${i}" placeholder="Nombre y apellido" required>
 
         <select id="menu${i}" required>
           <option value="">Menú</option>
@@ -67,11 +61,7 @@ console.log("Cupos:", cupos);
           <option value="Celíaco">Celíaco</option>
         </select>
 
-        <input 
-          type="text" 
-          id="restriccion${i}" 
-          placeholder="Restricción alimentaria (opcional)"
-        >
+        <input type="text" id="restriccion${i}" placeholder="Restricción alimentaria (opcional)">
       </div>
     `;
   }
@@ -91,8 +81,7 @@ console.log("Cupos:", cupos);
     for (let i = 1; i <= cupos; i++) {
       const nombre = document.getElementById(`nombre${i}`).value;
       const menu = document.getElementById(`menu${i}`).value;
-      const restriccion =
-        document.getElementById(`restriccion${i}`).value || "Ninguna";
+      const restriccion = document.getElementById(`restriccion${i}`).value || "Ninguna";
 
       mensaje +=
         `%0AIntegrante ${i}:%0A` +
@@ -102,8 +91,8 @@ console.log("Cupos:", cupos);
     }
 
     setTimeout(() => {
-      window.open(`https://wa.me/542634475711?text=${mensaje}`, "_blank");
-    }, 1200);
+      window.location.href = `https://wa.me/542634475711?text=${mensaje}`;
+    }, 1500);
   });
 }
 
