@@ -77,18 +77,35 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function mostrarMensajeConfirmacion() {
+
   const mensaje = document.createElement("div");
+
   mensaje.classList.add("mensaje-confirmacion");
 
   mensaje.innerHTML = `
+
     <div class="mensaje-caja">
-      <h2>¡Gracias!</h2>
+
+      <button class="cerrar-mensaje">&times;</button>
+
+      <h2>¡Gracias! 🎉</h2>
+
       <p>Tu asistencia fue confirmada correctamente.</p>
-      <p>Nos vemos el 15 de agosto ❤️</p>
+
+      <p>Nos vemos el <strong>15 de agosto ❤️</strong></p>
+
     </div>
+
   `;
 
   document.body.appendChild(mensaje);
+
+  mensaje.querySelector(".cerrar-mensaje").addEventListener("click", function () {
+
+      mensaje.remove();
+
+  });
+
 }
 
 function lanzarConfeti() {
