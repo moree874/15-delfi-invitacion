@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="integrante">
           <h3>Integrante ${i}</h3>
 
-          <input type="text" id="nombre${i}" placeholder="Nombre y apellido" required>
+          <input type="text" id="nombre${i}" placeholder="Nombre" required>
 
           <select id="menu${i}" required>
             <option value="">Menú</option>
