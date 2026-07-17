@@ -446,6 +446,10 @@ select {
     cursor: pointer;
     pointer-events: auto;
 }
+.spotify-btn:hover{
+    background: linear-gradient(135deg,#A21CAF,#7C3AED);
+    transform:scale(1.05);
+}
 
 .slide.playlist{
     height: auto !important;
